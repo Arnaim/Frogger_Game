@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c1vrqutnwtw3m"]
+
+[ext_resource type="Script" uid="uid://dno0c7s3u6k3y" path="res://scripts/game_start.gd" id="1_eblkc"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="1_s5y6q"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_kdykw"]
+[ext_resource type="Texture2D" uid="uid://d0dya2slufckd" path="res://graphics/cars/green.png" id="3_eblkc"]
+[ext_resource type="Texture2D" uid="uid://coju55l0voeig" path="res://graphics/start_game.png" id="4_kdykw"]
+
+[node name="Game_Start" type="Control" unique_id=307924856]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eblkc")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=560837740]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92156863, 0.37254903, 0.1764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=2056124407]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 56.0
+offset_right = 745.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_s5y6q")
+theme_override_font_sizes/font_size = 40
+text = "Why did the dude cross the road?"
+
+[node name="player" type="TextureRect" parent="ColorRect/Label" unique_id=1210921310]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -352.5
+offset_top = 43.0
+offset_right = -224.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_kdykw")
+
+[node name="car" type="TextureRect" parent="ColorRect" unique_id=1539555242]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 160.0
+offset_right = 896.0
+offset_bottom = 328.0
+texture = ExtResource("3_eblkc")
+
+[node name="StartGame" type="Button" parent="." unique_id=597736614]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 376.0
+offset_right = 1085.0
+offset_bottom = 757.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_kdykw")
+flat = true
+
+[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]

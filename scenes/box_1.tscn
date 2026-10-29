@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ba5keywqggssa"]
+
+[ext_resource type="Texture2D" uid="uid://y78osdw0bolc" path="res://graphics/objects/box1.png" id="1_0bnh8"]
+[ext_resource type="Texture2D" uid="uid://d0so81ys3820n" path="res://graphics/objects/tree1.png" id="1_ibctq"]
+[ext_resource type="Script" uid="uid://vki5g47ima01" path="res://scripts/object1.gd" id="1_mtxp5"]
+[ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="2_mtxp5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_72rhb"]
+
+[node name="object1" type="StaticBody2D" unique_id=1495774818]
+script = ExtResource("1_mtxp5")
+metadata/_edit_horizontal_guides_ = [5.0]
+
+[node name="Tree1" type="Sprite2D" parent="." unique_id=80586097]
+texture_filter = 1
+position = Vector2(-9, -12)
+texture = ExtResource("1_ibctq")
+metadata/_edit_lock_ = true
+
+[node name="Tree2" type="Sprite2D" parent="." unique_id=2060636357]
+texture_filter = 1
+position = Vector2(5, -11)
+texture = ExtResource("2_mtxp5")
+metadata/_edit_lock_ = true
+
+[node name="box1" type="Sprite2D" parent="." unique_id=2094906054]
+texture_filter = 1
+position = Vector2(-1, 1)
+texture = ExtResource("1_0bnh8")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=665320315]
+position = Vector2(-2, -9)
+shape = SubResource("CapsuleShape2D_72rhb")
+metadata/_edit_lock_ = true

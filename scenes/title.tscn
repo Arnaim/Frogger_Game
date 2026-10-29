@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bg46h5x2n6eev"]
+
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://box5do1sr48nd" path="res://scripts/title.gd" id="1_b3w7a"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://ocjfhrelwysu" path="res://graphics/cars/red.png" id="3_pyl7j"]
+[ext_resource type="Texture2D" uid="uid://d3oxfi3mw4go3" path="res://graphics/playagain.png" id="4_pyl7j"]
+
+[node name="Title" type="Control" unique_id=172182339]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3w7a")
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=947865915]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -8.0
+offset_right = 3.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.64705884, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1410697891]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -456.0
+offset_top = 56.0
+offset_right = 745.0
+offset_bottom = 125.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 40
+text = "Why did the dude cross the road?"
+
+[node name="player" type="TextureRect" parent="." unique_id=2051059217]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -488.0
+offset_right = -96.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_p6dhs")
+
+[node name="car" type="TextureRect" parent="." unique_id=146258077]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 152.0
+offset_right = 800.0
+offset_bottom = 320.0
+texture = ExtResource("3_pyl7j")
+
+[node name="score" type="Label" parent="." unique_id=859995125]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 304.0
+offset_top = 392.0
+offset_right = 694.0
+offset_bottom = 445.0
+theme_override_fonts/font = ExtResource("1_4ignj")
+theme_override_font_sizes/font_size = 40
+text = "High Score: 0"
+
+[node name="Button" type="Button" parent="." unique_id=525639913]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 455.0
+offset_right = 1061.0
+offset_bottom = 836.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_pyl7j")
+flat = true
+autowrap_mode = 1
+autowrap_trim_flags = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
